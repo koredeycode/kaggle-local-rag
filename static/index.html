@@ -1,0 +1,63 @@
+<!doctype html>
+<!--
+  Browser client — Phase 7. Not yet implemented.
+
+  The API contract it will consume is decided (§16, §17), so this file records
+  the invariants rather than leaving them to be rediscovered while writing JS:
+
+  * One active session at a time. The session is the root of all state; switching
+    sessions swaps the document list, index, and question history wholesale, and
+    never leaves one session's chunks reachable from another.
+  * Two views, no router library: Setup when the active session's index is empty,
+    Ask when it has chunks. The condition is per session, not global — a fresh
+    session shows Setup even when another session is fully indexed.
+  * Streaming is POST + fetch + ReadableStream, never EventSource. A Cloudflare
+    Quick Tunnel buffers GET responses and flushes on close (§19.3), and
+    EventSource can only issue GET. The SSE framing stays standard, so switching
+    back is a one-line method change.
+  * The client does NOT generate a QR code for the tunnel URL. The URL only exists
+    inside the notebook, where cell 27 renders the QR into the output (§6.9).
+
+  No build step, no bundler, no framework, and no CDN dependency — the client runs
+  inside a Kaggle session reached over a tunnel, where a build step is a liability
+  and a CDN fetch is a hard failure.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!--
+      Required, not decorative: without it mobile browsers render a 980px
+      desktop page and zoom out. `viewport-fit=cover` pairs with the
+      env(safe-area-inset-*) padding the stylesheet must apply (§17.6).
+    -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>kaggle-local-rag</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <noscript>
+      This client needs JavaScript. The API is still reachable directly at
+      <code>/docs</code> on the FastAPI server.
+    </noscript>
+
+    <!--
+      Session bar: always visible. Long titles truncate and never wrap the bar,
+      because a long session title must not push the layout off a phone screen.
+    -->
+    <header class="session-bar">
+      <button id="session-picker" type="button">Session</button>
+      <span id="session-title"></span>
+      <span id="session-stats"></span>
+      <button id="new-session" type="button">New</button>
+      <button id="rename-session" type="button">Rename</button>
+    </header>
+
+    <!-- View container. Filled by app.js; Setup and Ask both render here. -->
+    <main id="view"></main>
+
+    <script type="module" src="/static/app.js"></script>
+  </body>
+</html>

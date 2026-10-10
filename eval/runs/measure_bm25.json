@@ -1,0 +1,14 @@
+[
+  {
+    "chunks": 10000.0,
+    "corpus_mb": 20.49,
+    "build_ms_min": 6275.37,
+    "build_ms_median": 6275.37,
+    "build_ms_max": 6275.37,
+    "build_us_per_chunk": 627.5,
+    "query_ms_p50": 83.275,
+    "query_ms_p95": 84.267,
+    "terms": 167.0,
+    "avg_doc_length": 219.8
+  }
+]

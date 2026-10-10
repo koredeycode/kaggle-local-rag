@@ -1,0 +1,82 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "kaggle-local-rag"
+version = "0.1.0"
+description = "Citation-backed RAG on local models inside a Kaggle T4 x2 session."
+readme = "README.md"
+# §3: Python 3.12 on the Kaggle image; the local dev box is 3.14 and therefore
+# outside the pin. 3.10 is the floor for the `X | None` syntax used throughout.
+requires-python = ">=3.10,<3.14"
+license = { text = "Apache-2.0" }
+
+# Core runtime. Deliberately tiny: `mock` profile must install and test with no
+# GPU, no model download, and ideally no heavyweight wheel (§8 rule 1).
+dependencies = [
+  "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+# Everything needed only in the `local` profile on Kaggle. Kept out of the core
+# so `pip install -e .` on a 3GB laptop does not pull torch.
+local = [
+  "sentence-transformers>=3.0",
+  "transformers>=4.44",
+  "torch>=2.1",
+  "fastapi>=0.110",
+  "uvicorn[standard]>=0.27",
+  "httpx>=0.27",
+  "python-multipart>=0.0.9",
+]
+# Parsers for formats that are not handled by stdlib (§9 loaders).
+ingest = [
+  "pymupdf>=1.24",
+  "python-docx>=1.1",
+]
+dev = [
+  "pytest>=8.0",
+  "mypy>=1.10",
+  "ruff>=0.5",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/raglab"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+# numpy is optional for the pure-logic tests; see docs/development.md.
+filterwarnings = ["error::DeprecationWarning:raglab.*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "C4", "SIM", "RUF", "ANN", "D"]
+ignore = [
+  "D203",   # incompatible with D211
+  "D213",   # incompatible with D212
+  "ANN401", # `Any` is legitimate in loader/profile plumbing
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D", "ANN", "S101"]
+"scripts/*" = ["D", "ANN"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "pep257"
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_unreachable = true
+packages = ["raglab"]
+mypy_path = "src"
+
+[[tool.mypy.overrides]]
+module = ["numpy", "numpy.*"]
+ignore_missing_imports = true

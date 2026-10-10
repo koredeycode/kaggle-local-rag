@@ -1,0 +1,34 @@
+{"qid": "q001", "question": "What is Term 1 tuition for senior secondary in 2026?", "answerable": true, "gold_docs": ["corpus/fees-2026.md"], "gold_spans": [], "tags": ["factual", "single-hop", "numeric"], "reference_answer": "N450,000 per pupil"}
+{"qid": "q002", "question": "How much is junior secondary tuition per term?", "answerable": true, "gold_docs": ["corpus/fees-2026.md"], "gold_spans": [], "tags": ["factual", "single-hop", "numeric"], "reference_answer": "N185,000 per term"}
+{"qid": "q003", "question": "What are the boarding charges per term?", "answerable": true, "gold_docs": ["corpus/fees-2026.md"], "gold_spans": [], "tags": ["factual", "single-hop", "numeric"], "reference_answer": "N120,000"}
+{"qid": "q004", "question": "Can parents pay tuition in instalments, and on what condition?", "answerable": true, "gold_docs": ["corpus/fees-2026.md"], "gold_spans": [], "tags": ["factual", "single-hop"], "reference_answer": "Yes, two instalments if the second is settled before the close of the term"}
+{"qid": "q005", "question": "Under what circumstances are boarding charges refunded?", "answerable": true, "gold_docs": ["corpus/fees-2026.md"], "gold_spans": [], "tags": ["factual", "single-hop"]}
+{"qid": "q006", "question": "Which section of the education ordinance governs refund policy?", "answerable": true, "gold_docs": ["corpus/fees-2026.md"], "gold_spans": [], "tags": ["factual", "exact-identifier"], "reference_answer": "Section 14"}
+{"qid": "q007", "question": "What is the deadline for a refund application after withdrawal?", "answerable": true, "gold_docs": ["corpus/fees-2026.md"], "gold_spans": [], "tags": ["factual", "numeric", "temporal"]}
+{"qid": "q008", "question": "What do the compulsory levies cover?", "answerable": true, "gold_docs": ["corpus/levies.md"], "gold_spans": [], "tags": ["factual", "single-hop"]}
+{"qid": "q009", "question": "What is the minimum number of subjects a candidate must sit to be eligible for promotion?", "answerable": true, "gold_docs": ["corpus/fees-2026.md"], "gold_spans": [], "tags": ["factual", "numeric"]}
+{"qid": "q010", "question": "What grade point average is required for promotion?", "answerable": true, "gold_docs": ["corpus/fees-2026.md"], "gold_spans": [], "tags": ["factual", "numeric"]}
+{"qid": "q011", "question": "How many days of unexplained absence bar a pupil from promotion?", "answerable": true, "gold_docs": ["corpus/fees-2026.md"], "gold_spans": [], "tags": ["factual", "numeric"]}
+{"qid": "q012", "question": "On what basis are bursaries awarded?", "answerable": true, "gold_docs": ["corpus/bursaries.md"], "gold_spans": [], "tags": ["factual", "single-hop"]}
+{"qid": "q013", "question": "When do bursary applications close?", "answerable": true, "gold_docs": ["corpus/bursaries.md"], "gold_spans": [], "tags": ["factual", "temporal"]}
+{"qid": "q014", "question": "How much is the science laboratory improvement fund per term?", "answerable": true, "gold_docs": ["corpus/levies.md"], "gold_spans": [], "tags": ["factual", "numeric", "single-hop"]}
+{"qid": "q015", "question": "Compare senior and junior secondary tuition for Term 1.", "answerable": true, "gold_docs": ["corpus/fees-2026.md"], "gold_spans": [], "tags": ["multi-hop", "numeric"]}
+{"qid": "q016", "question": "A pupil pays Term 1 tuition in two instalments and then withdraws. Can they get money back, and which rule decides it?", "answerable": true, "gold_docs": ["corpus/fees-2026.md"], "gold_spans": [], "tags": ["multi-hop"]}
+{"qid": "q017", "question": "Which two documents would I need to read for both tuition and refund policy?", "answerable": true, "gold_docs": ["corpus/fees-2026.md"], "gold_spans": [], "tags": ["multi-hop", "cross-document"]}
+{"qid": "q018", "question": "What is the first-term school fee for senior pupils?", "answerable": true, "gold_docs": ["corpus/fees-2026.md"], "gold_spans": [], "tags": ["paraphrased", "single-hop"], "reference_answer": "N450,000"}
+{"qid": "q019", "question": "How much does it cost to attend school in the first term for older students?", "answerable": true, "gold_docs": ["corpus/fees-2026.md"], "gold_spans": [], "tags": ["paraphrased", "single-hop"]}
+{"qid": "q020", "question": "What happens to money paid if someone leaves after the first term?", "answerable": true, "gold_docs": ["corpus/fees-2026.md"], "gold_spans": [], "tags": ["paraphrased"]}
+{"qid": "q021", "question": "How much is Term 1 tuition in total, including levies?", "answerable": true, "gold_docs": ["corpus/fees-2026.md", "corpus/levies.md"], "gold_spans": [], "tags": ["multi-hop", "cross-document", "numeric"]}
+{"qid": "q022", "question": "What is the exact wording of the attendance clause?", "answerable": true, "gold_docs": ["corpus/policies.md"], "gold_spans": [], "tags": ["factual", "exact-identifier"]}
+{"qid": "q023", "question": "Who signs off on refund applications?", "answerable": true, "gold_docs": ["corpus/policies.md"], "gold_spans": [], "tags": ["factual", "cross-document"]}
+{"qid": "q024", "question": "What is the deadline for promotion appeals?", "answerable": false, "gold_docs": [], "gold_spans": [], "tags": ["unanswerable"]}
+{"qid": "u001", "question": "What is the 2027 Term 1 tuition?", "answerable": false, "gold_docs": [], "gold_spans": [], "tags": ["unanswerable", "temporal"]}
+{"qid": "u002", "question": "Which school has the cheapest boarding fees in Nigeria?", "answerable": false, "gold_docs": [], "gold_spans": [], "tags": ["unanswerable", "cross-document"]}
+{"qid": "u003", "question": "What is the name of the bursary committee chair?", "answerable": false, "gold_docs": [], "gold_spans": [], "tags": ["unanswerable"]}
+{"qid": "u004", "question": "What is the school's telephone number?", "answerable": false, "gold_docs": [], "gold_spans": [], "tags": ["unanswerable", "exact-identifier"]}
+{"qid": "u005", "question": "How do I appeal a promotion decision?", "answerable": false, "gold_docs": [], "gold_spans": [], "tags": ["unanswerable"]}
+{"qid": "u006", "question": "What was Term 1 tuition in 2019?", "answerable": false, "gold_docs": [], "gold_spans": [], "tags": ["unanswerable", "temporal"]}
+{"qid": "u007", "question": "Which states charge the lowest compulsory levies?", "answerable": false, "gold_docs": [], "gold_spans": [], "tags": ["unanswerable", "cross-document"]}
+{"qid": "u008", "question": "Does the school offer scholarships for students from other countries?", "answerable": false, "gold_docs": [], "gold_spans": [], "tags": ["unanswerable"]}
+{"qid": "u009", "question": "What is the school's email address?", "answerable": false, "gold_docs": [], "gold_spans": [], "tags": ["unanswerable", "exact-identifier"]}
+{"qid": "u010", "question": "How many students are enrolled at the school?", "answerable": false, "gold_docs": [], "gold_spans": [], "tags": ["unanswerable", "numeric"]}

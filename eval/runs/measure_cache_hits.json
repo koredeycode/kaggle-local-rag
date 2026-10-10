@@ -1,0 +1,44 @@
+{
+  "documents": 30,
+  "overlap": 64,
+  "chunk_counts": {
+    "fixed/256": 56,
+    "fixed/512": 31,
+    "recursive/256": 52,
+    "recursive/512": 31,
+    "structural/256": 81,
+    "structural/512": 81
+  },
+  "grid": [
+    {
+      "strategy": "fixed",
+      "size": 512,
+      "max_prior_hit": 0.3225806451612903,
+      "mean_prior_hit": 0.3225806451612903
+    },
+    {
+      "strategy": "recursive",
+      "size": 256,
+      "max_prior_hit": 0.0,
+      "mean_prior_hit": 0.0
+    },
+    {
+      "strategy": "recursive",
+      "size": 512,
+      "max_prior_hit": 0.3548387096774194,
+      "mean_prior_hit": 0.11827956989247312
+    },
+    {
+      "strategy": "structural",
+      "size": 256,
+      "max_prior_hit": 0.0,
+      "mean_prior_hit": 0.0
+    },
+    {
+      "strategy": "structural",
+      "size": 512,
+      "max_prior_hit": 1.0,
+      "mean_prior_hit": 0.2
+    }
+  ]
+}

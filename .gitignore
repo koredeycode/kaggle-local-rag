@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Runtime state. §6.2: the durable store root is /kaggle/working/ragstore on
+# Kaggle; locally it points under the repo so it is never committed.
+ragstore/
+*.npy
+!tests/fixtures/**/*.npy
+
+# Secrets. §16: the runtime token is never written to disk, never committed.
+.env
+runtime_token
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Eval run output. §7 marks this gitignored: ablation results are regenerable and
+# a 16-cell grid produces a lot of JSON. The exception is the two Phase 0
+# measurement records, which are the evidence behind docs/measurements.md and are
+# therefore part of the project rather than output of it.
+eval/runs/*
+!eval/runs/measure_bm25.json
+!eval/runs/measure_cache_hits.json
+
+# OS noise
+.DS_Store
