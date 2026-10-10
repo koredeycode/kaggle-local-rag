@@ -22,6 +22,7 @@ No aspirational descriptions of unimplemented behaviour — an explicit
 | [roadmap.md](roadmap.md) | Phase gates, what is done, and what the measurements changed |
 | [measurements.md](measurements.md) | **Phase 0 measurements, with the numbers this machine produced** |
 | [notebook-runbook.md](notebook-runbook.md) | Cell-by-cell notebook structure and the Kaggle workaround catalogue |
+| [../PLAN.md](../PLAN.md) | The design document every `§n` reference points into |
 
 ## Not yet written
 
@@ -40,6 +41,5 @@ hand.
 ## Section references
 
 `§n` throughout the codebase and these documents refers to sections of
-[`../kaggle-local-rag-plan.md`](../kaggle-local-rag-plan.md). Citing the section
-next to a claim is how a reader tells which decisions are settled and which are
-still open.
+[`../PLAN.md`](../PLAN.md). Citing the section next to a claim is how a reader
+tells which decisions are settled and which are still open.

@@ -11,8 +11,8 @@ doc update, and one measured delta. Phases 0 and 1 need no GPU.
 |---|---|
 | Test suite green | 225 tests, `make test` |
 | Eval harness runs with zero GPU | done |
-| BM25 build time measured (§6.7) | done — [measurements](docs/measurements.md) |
-| Embedding-cache hit rate measured (§20) | done — [measurements](docs/measurements.md) |
+| BM25 build time measured (§6.7) | done — [measurements](measurements.md) |
+| Embedding-cache hit rate measured (§20) | done — [measurements](measurements.md) |
 | fp16 vs fp32 agreement measured (§5.5) | shipped, **not run** — needs Kaggle |
 | POST-streaming proven through a tunnel (§19.3) | **not started** — needs the service |
 

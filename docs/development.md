@@ -67,7 +67,7 @@ make preflight        # §19.1 environment report
 
 Both write to `eval/runs/` and both are seeded, so a later run is comparable with
 an earlier one. Results and interpretation are in
-[`docs/measurements.md`](docs/measurements.md).
+[`docs/measurements.md`](measurements.md).
 
 `make measure-precision` (§5.5 fp16 vs fp32) needs `bge-m3` and realistically a
 GPU. It ships; it has not been run.

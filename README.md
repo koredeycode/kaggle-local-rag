@@ -4,7 +4,7 @@ Citation-backed RAG running entirely on local models inside a free Kaggle T4 x2
 session. No API key, ever.
 
 This is a **curriculum project**: every design decision in it is also a thing it
-tries to teach. The full design is in [`PLAN.md`](kaggle-local-rag-plan.md);
+tries to teach. The full design is in [`PLAN.md`](PLAN.md);
 [`docs/`](docs/) records the reasoning as it is made rather than reconstructed
 later.
 
