@@ -10,7 +10,7 @@ export PYTHONPATH := $(SRC)
 
 .DEFAULT_GOAL := help
 .PHONY: help test test-kaggle lint fmt typecheck check measure measure-bm25 \
-        measure-cache measure-precision preflight clean-eval
+        measure-cache measure-precision preflight clean-eval notebook
 
 help: ## Show this help
 	@grep -hE '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) \
@@ -52,6 +52,9 @@ measure-precision: ## §5.5 fp16 vs fp32 embedding agreement (Kaggle only)
 
 preflight: ## §19.1 environment, device and model report
 	$(PY) scripts/preflight.py --json eval/runs/preflight.json
+
+notebook: ## Regenerate kaggle/00_phase0_checks.ipynb from its generator
+	$(PY) scripts/gen_phase0_notebook.py
 
 clean-eval: ## Remove measurement output (never the questions)
 	rm -rf eval/runs/*
